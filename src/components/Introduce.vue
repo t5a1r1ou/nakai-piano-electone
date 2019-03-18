@@ -17,7 +17,7 @@
       <h2 class="contents-title greet-title">ご挨拶</h2>
       <p class="contents-detail">門真市常磐町でエレクトーン・ピアノのレッスンをしています。<br>
       初心者の方から、経験者、２歳のお子様からシニアの方まで、一人一人にあわせた楽しいレッスンを心がけています。</p>
-      <p class="contents-detail">無料体験レッスンを実施しています。<a href="#" class="detail-link">こちら</a>からお気軽にお問い合わせ下さい。</p>
+      <p class="contents-detail">無料体験レッスンを実施しています。<router-link to="/contact" class="detail-link">こちら</router-link>からお気軽にお問い合わせ下さい。</p>
       <div class="contents-img-block flexbox">
         <img src="../assets/text1.png" alt="使用テキスト１">
         <img src="../assets/text2.png" alt="使用テキスト２">

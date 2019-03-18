@@ -1,7 +1,7 @@
 <template>
   <footer>
-    <p class="footer-tel">お電話でのお問い合わせ：072-882-8961</p>
-    <p class="footer-mail">webからのお問い合わせ：こちら</p>
+    <p class="footer-tel">お電話でのお問い合わせ：<a href="tel:072-882-8961">072-882-8961</a></p>
+    <p class="footer-mail">webからのお問い合わせ：<router-link to="/contact">こちら</router-link></p>
   </footer>
 </template>
 
@@ -11,6 +11,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$tab :1100px;
+$sp :768px;
+$ssp : 700px;
+
+@mixin tab {
+  @media only screen and (max-width: ($tab)){
+    @content;
+  }
+}
+
+@mixin sp {
+  @media only screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+@mixin ssp {
+  @media only screen and (max-width: ($ssp)) {
+    @content;
+  }
+}
+
 footer {
   background-color: #cab5ab;
   color: #fff;
@@ -36,5 +58,12 @@ footer {
 .footer-mail {
   padding-bottom: 3em;
 }
+
+a[href^="tel:"] {
+		pointer-events: none;
+    @include sp {
+      pointer-events: auto;
+    }
+	}
 
 </style>
