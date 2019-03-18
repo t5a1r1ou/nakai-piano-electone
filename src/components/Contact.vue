@@ -6,17 +6,17 @@
       <p class="hidden"  style="display: none;">
       <label>Don’t fill this out: <input name="bot-field"></label>
     </p>
-      <label for="username">お名前</label><input type="text" name="name" id="username" v-model="form.name">
+      <label for="username">お名前※必須</label><input type="text" name="name" id="username" v-model="form.name">
       <label for="useremail">メールアドレス</label><input type="email" name="email" id="useremail" v-model="form.email">
       <label for="usertel">お電話番号</label><input type="tel" name="tel" id="usertel" v-model="form.tel">
-      <p class="radio-block">
-        <label for="apply" class="radio-label">無料体験レッスン希望</label>
-        <input type="radio" name="apply" value="希望する" checked="checked" id="radio01" v-model="form.selectedRadio"/>
-        <label for="radio01" class="radio">希望する</label>
-        <input type="radio" name="apply" value="その他のお問い合わせ" id="radio02"  v-model="form.selectedRadio"/>
-        <label for="radio02" class="radio">その他のお問い合わせ</label>
+        <p>
+          <p class="form-text">※電話番号、メールアドレスどちらか必須</p>
+        <input type="checkbox" name="check" value="希望する" id="apply" v-model="form.check"/>
+    <label for="apply" class="checkbox">無料体験レッスンを希望する</label>
       </p>
-      <label for="contact">お問い合わせ内容</label><textarea name="message" id="contact" v-model="form.message"></textarea>
+      <p class="text-block">
+        <label for="contact">お問い合わせ内容</label><textarea name="message" id="contact" v-model="form.message" placeholder="ああああああああ"></textarea>
+      </p>
       <p v-if="errors.length">
         <ul>
           <li v-for="(error, index) in errors" :key="index" class="ct-errors">{{ error }}</li>
@@ -39,7 +39,7 @@ export default {
         email: "",
         tel: "",
         message: "",
-        selectedRadio: "希望する",
+        check: false,
       },
       errors: [],
       isSubmit: false
@@ -57,20 +57,31 @@ export default {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       }
-      axios.post(
-        "/",
-        this.encode({
-          "form-name": "contact",
-          ...this.form
-        }),
-        axiosConfig
-      )
-      .then(() => {
-        this.$router.push('thanks')
-      })
-      .catch(() => {
-        this.$router.push('404')
-      })
+
+      if (!this.form.name) {
+        this.errors.push("名前は必須です")
+      }
+
+      if (!this.form.email && !this.form.tel) {
+        this.errors.push("電話番号、メールアドレスのいずれかは必須です")
+      }
+
+      if ((this.form.name && this.form.email) || (this.form.name && this.form.tel)){
+        axios.post(
+          "/",
+          this.encode({
+            "form-name": "contact",
+            ...this.form
+          }),
+          axiosConfig
+        )
+        .then(() => {
+          this.$router.push('thanks')
+        })
+        .catch(() => {
+          this.$router.push('404')
+        })
+      }
     }
   }
 }
@@ -155,14 +166,15 @@ $ssp :700px;
 
 .radio-label {
   display: block;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
-input[type=radio], input[type=checkbox] {
+input[type=checkbox] {
   display: none;
 }
 
-.radio {
+
+.checkbox {
   box-sizing: border-box;
   -webkit-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
@@ -171,21 +183,14 @@ input[type=radio], input[type=checkbox] {
   margin: 0 20px 8px 0;
   padding: 12px 12px 12px 42px;
   border-radius: 8px;
+  background-color: #f6f7f8;
   vertical-align: middle;
   cursor: pointer;
-
-  &:hover {
-    background-color: #f7f7f6;
-    &:after {
-      border-color: #333;
-    }
-  }
-
   &:after {
     -webkit-transition: border-color 0.2s linear;
     transition: border-color 0.2s linear;
     position: absolute;
-    top: 50%;
+    top: 53%;
     left: 15px;
     display: block;
     margin-top: -10px;
@@ -199,20 +204,31 @@ input[type=radio], input[type=checkbox] {
     -webkit-transition: opacity 0.2s linear;
     transition: opacity 0.2s linear;
     position: absolute;
-    top: 50%;
-    left: 18px;
+    top: 53%;
+    left: 21px;
     display: block;
     margin-top: -7px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #333;
+    width: 5px;
+    height: 9px;
+    border-right: 3px solid #333;
+    border-bottom: 3px solid #333;
     content: '';
     opacity: 0;
-    input[type=radio]:checked + & {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    input[type=checkbox]:checked + & {
       opacity: 1;
     }
   }
+}
+
+.form-text {
+  margin-bottom: 1em;
+}
+
+.text-block {
+  margin-top: 1em;
 }
 
 </style>

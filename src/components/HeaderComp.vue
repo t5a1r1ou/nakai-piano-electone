@@ -95,9 +95,15 @@ $ssp :700px;
         height: 1px;
         background: #fff;
         transition: all 0.3s ease 0s;
+        @include sp {
+          display: none;
+        }
       }
       &:hover::after {
         width: 100%;
+        @include sp {
+          display: none;
+        }
       }
     }
   }

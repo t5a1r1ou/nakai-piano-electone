@@ -6,16 +6,18 @@
       <span class="menu_line-cnt line":class="{ active: isActive }"></span>
       <span class="menu_line-btm line":class="{ active: isActive }"></span>
     </a>
-    <nav class="nav_sp" v-if="navStatus">
-      <ul class="navsp-menu">
-        <li><router-link to="/" @click.native="navspClose">ホーム</router-link></li>
-        <li><router-link to="/guide" @click.native="navspClose">教室案内</router-link></li>
-        <li><router-link to="/event" @click.native="navspClose">イベント</router-link></li>
-        <li><router-link to="/party" @click.native="navspClose">わくわく音楽隊</router-link></li>
-        <li><a href="https://blogs.yahoo.co.jp/kikuko_music">ブログ</a></li>
-        <li><router-link to="/contact" @click.native="navspClose">お問い合わせ</router-link></li>
-      </ul>
-    </nav>
+    <transition>
+      <nav class="nav_sp" v-if="navStatus">
+        <ul class="navsp-menu">
+          <li><router-link to="/" @click.native="navspClose">ホーム</router-link></li>
+          <li><router-link to="/guide" @click.native="navspClose">教室案内</router-link></li>
+          <li><router-link to="/event" @click.native="navspClose">イベント</router-link></li>
+          <li><router-link to="/party" @click.native="navspClose">わくわく音楽隊</router-link></li>
+          <li><a href="https://blogs.yahoo.co.jp/kikuko_music">ブログ</a></li>
+          <li><router-link to="/contact" @click.native="navspClose">お問い合わせ</router-link></li>
+        </ul>
+      </nav>
+    </transition>
   </div>
 </template>
 
@@ -34,8 +36,8 @@ export default {
       this.isActive = !this.isActive
     },
     navspClose() {
-      this.navStatus = false
       this.isActive = false
+      setTimeout(this.navStatus = false, 10000)
     }
   }
 }
@@ -137,5 +139,22 @@ img {
     }
   }
 }
+
+.v-enter-active, .v-leave-active {
+  -webkit-transition: opacity .5s, -webkit-transform .5s;
+  -o-transition: opacity .5s, -o-transform .5s;
+  transition: opacity .5s, transform .5s;
+}
+
+.v-enter {
+  opacity: 0;
+  transform: translateY(5em);
+}
+
+.v-leave-to {
+  opacity: 0;
+  transform: translateY(5em);
+}
+
 
 </style>
