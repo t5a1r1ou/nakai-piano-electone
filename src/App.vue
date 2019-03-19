@@ -16,6 +16,31 @@ export default {
   components: {
     HeaderComp,
     FooterComp
+  },
+  methods: {
+    createPageTitle: function(to) {
+      if(to.meta.title) {
+        let setTitle = to.meta.title + ' | 中井ピアノエレクトーン教室'
+        document.title = setTitle
+      } else {
+        document.title = "中井ピアノエレクトーン教室"
+      }
+      if(to.meta.desc) {
+        let setDesc = to.meta.desc + ' | 中井ピアノエレクトーン教室'
+        document.querySelector("meta[name='description']").setAttribute('content', setDesc)
+      } else {
+        document.querySelector("meta[name='description']").setAttribute('content', '中井ピアノエレクトーン教室')
+      }
+    }
+  },
+  mounted() {
+    let to = this.$route
+    this.createPageTitle(to)
+  },
+  watch: {
+    '$route' (to, from) {
+      this.createPageTitle(to)
+    }
   }
 }
 </script>

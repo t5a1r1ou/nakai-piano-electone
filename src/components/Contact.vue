@@ -6,16 +6,16 @@
       <p class="hidden"  style="display: none;">
       <label>Don’t fill this out: <input name="bot-field"></label>
     </p>
-      <label for="username">お名前※必須</label><input type="text" name="name" id="username" v-model="form.name">
-      <label for="useremail">メールアドレス</label><input type="email" name="email" id="useremail" v-model="form.email">
-      <label for="usertel">お電話番号</label><input type="tel" name="tel" id="usertel" v-model="form.tel">
+      <label for="username">お名前※必須</label><input type="text" name="name" id="username" v-model="form.name" placeholder="中井 太郎">
+      <label for="useremail">メールアドレス</label><input type="email" name="email" id="useremail" v-model="form.email" placeholder="nakai@sample.com">
+      <label for="usertel">お電話番号</label><input type="tel" name="tel" id="usertel" v-model="form.tel" placeholder="080XXXXYYYY">
         <p>
           <p class="form-text">※電話番号、メールアドレスどちらか必須</p>
-        <input type="checkbox" name="check" value="希望する" id="apply" v-model="form.check"/>
+        <input type="checkbox" name="check" value="希望する" id="apply" v-model="form.check" @click="optionHandler"/>
     <label for="apply" class="checkbox">無料体験レッスンを希望する</label>
       </p>
       <p class="text-block">
-        <label for="contact">お問い合わせ内容</label><textarea name="message" id="contact" v-model="form.message" placeholder="ああああああああ"></textarea>
+        <label for="contact">お問い合わせ内容※任意</label><textarea name="message" id="contact" v-model="form.message" :placeholder="placeHolderOption"></textarea>
       </p>
       <p v-if="errors.length">
         <ul>
@@ -42,7 +42,7 @@ export default {
         check: false,
       },
       errors: [],
-      isSubmit: false
+      placeHolderOption: "こちらにお問い合わせ内容を入力してください。"
     }
   },
   methods: {
@@ -81,6 +81,13 @@ export default {
         .catch(() => {
           this.$router.push('404')
         })
+      }
+    },
+    optionHandler() {
+      if(this.form.check == false) {
+        this.placeHolderOption = "こちらにお問い合わせ内容を入力してください。無料体験レッスン希望の場合は、希望のお日にちを記載いただけると予約がスムーズです。"
+      } else {
+        this.placeHolderOption = "こちらにお問い合わせ内容を入力してください。"
       }
     }
   }

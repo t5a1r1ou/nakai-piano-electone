@@ -33,6 +33,10 @@ $ssp : 700px;
   }
 }
 
+a {
+  color: #fff;
+}
+
 footer {
   background-color: #cab5ab;
   color: #fff;
