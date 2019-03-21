@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
+    "copy-webpack-plugin": "^5.0.1",
     "prerender-spa-plugin": "^3.4.0",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1"

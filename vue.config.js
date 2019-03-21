@@ -1,5 +1,6 @@
-var path = require('path')
-var PrerenderSpaPlugin = require('prerender-spa-plugin')
+const path = require('path')
+const PrerenderSpaPlugin = require('prerender-spa-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   pages: {
@@ -37,7 +38,13 @@ module.exports = {
       new PrerenderSpaPlugin(
         path.join(__dirname, 'dist'),
         [ '/guide', '/event', '/contact' ]
-      )
+      ),
+      new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, './root'),
+        to: path.resolve(__dirname, './dist'),
+      }
+    ])
     ]
   }
 }
