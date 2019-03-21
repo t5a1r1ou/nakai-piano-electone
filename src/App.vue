@@ -198,7 +198,7 @@ img {
     font-size: 1.8rem;
   }
   @include ssp {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 
