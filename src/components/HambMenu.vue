@@ -1,6 +1,8 @@
 <template>
   <div class="hambmenu">
+    <router-link to="/">
     <img src="../assets/logo.png" alt="ロゴ" class="logo-img_sp">
+    </router-link>
     <a href="#" class="menu_sp" @click="navspToggle">
       <span class="menu_line-tp line" :class="{ active: isActive }"></span>
       <span class="menu_line-cnt line":class="{ active: isActive }"></span>
@@ -10,6 +12,7 @@
       <nav class="nav_sp" v-if="navStatus">
         <ul class="navsp-menu">
           <li><router-link to="/" @click.native="navspClose">ホーム</router-link></li>
+          <li><router-link to="/lesson" @click.native="navspClose">レッスンについて</router-link></li>
           <li><router-link to="/guide" @click.native="navspClose">教室案内</router-link></li>
           <li><router-link to="/event" @click.native="navspClose">イベント</router-link></li>
           <li><router-link to="/party" @click.native="navspClose">わくわく音楽隊</router-link></li>
@@ -133,7 +136,7 @@ img {
   .navsp-menu li {
     display: block;
     margin-right: 0;
-    padding: 1.5em 0;
+    padding: 1em 0;
     a {
       color: #333;
     }

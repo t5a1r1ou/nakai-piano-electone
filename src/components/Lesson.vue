@@ -3,10 +3,10 @@
     <div class="contents-block inner">
       <h2 class="contents-title contents-title">レッスンについて</h2>
       <p class="contents-detail">エレクトーン・ピアノで楽しく音楽を学べるように心がけています。小さいお子様から、保育士を目指す大学生、趣味として楽しみたいシニアの方まで、様々な年齢の生徒さんに通っていただいています。</p>
-      <p class="contents-sub">個人レッスン（エレクトーン・ピアノ）</p>
+      <p class="contents-sub">個人レッスン<br>(エレクトーン・ピアノ)</p>
       <p class="contents-detail">一人一人の生徒さんにあった練習内容で無理の無いよう上達していけるようにしています<br>
       大人の方はライフスタイルに合わせたレッスンを行います。ヤマハグレードも導入しています。</p>
-      <p class="contents-sub">プレレッスン（２、３人のグループレッスン）</p>
+      <p class="contents-sub">プレレッスン<br>(2~3人のグループレッスン)</p>
       <p class="contents-detail">２歳〜年長までのクラスです。お友達と楽しみながら基礎を学び、音楽を通じて、集中力と豊かな感性を養います。<br>
       お友達と一緒にお申し込みください。</p>
     </div>

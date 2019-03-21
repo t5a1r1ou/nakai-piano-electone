@@ -11,11 +11,11 @@
       <label for="usertel">お電話番号</label><input type="tel" name="tel" id="usertel" v-model="form.tel" placeholder="080XXXXYYYY">
         <p>
           <p class="form-text">※電話番号、メールアドレスどちらか必須</p>
-        <input type="checkbox" name="check" value="希望する" id="apply" v-model="form.check" @click="optionHandler"/>
+        <input type="checkbox" name="check" value="希望する" id="apply" v-model="form.check"/>
     <label for="apply" class="checkbox">無料体験レッスンを希望する</label>
       </p>
       <p class="text-block">
-        <label for="contact">お問い合わせ内容※任意</label><textarea name="message" id="contact" v-model="form.message" :placeholder="placeHolderOption"></textarea>
+        <label for="contact">お問い合わせ内容</label><textarea name="message" id="contact" v-model="form.message" placeholder="こちらにお問い合わせ内容を入力してください。"></textarea>
       </p>
       <p v-if="errors.length">
         <ul>
@@ -41,8 +41,7 @@ export default {
         message: "",
         check: false,
       },
-      errors: [],
-      placeHolderOption: "こちらにお問い合わせ内容を入力してください。"
+      errors: []
     }
   },
   methods: {
@@ -82,13 +81,6 @@ export default {
           this.$router.push('404')
         })
       }
-    },
-    optionHandler() {
-      if(this.form.check == false) {
-        this.placeHolderOption = "こちらにお問い合わせ内容を入力してください。無料体験レッスン希望の場合は、希望のお日にちを記載いただけると予約がスムーズです。"
-      } else {
-        this.placeHolderOption = "こちらにお問い合わせ内容を入力してください。"
-      }
     }
   }
 }
@@ -113,6 +105,12 @@ $ssp :700px;
 
 @mixin ssp {
   @media only screen and (max-width: ($ssp)) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media only screen and(min-width: ($sp)) {
     @content;
   }
 }
@@ -156,9 +154,11 @@ $ssp :700px;
     cursor: pointer;
     transition: .4s;
     font-size: 1.8rem;
-    &:hover {
-      background-color: #f1bb29;
-      border: 3px solid #f1bb29;
+    @include hover {
+      &:hover {
+        background-color: #f1bb29;
+        border: 3px solid #f1bb29;
+      }
     }
   }
 }

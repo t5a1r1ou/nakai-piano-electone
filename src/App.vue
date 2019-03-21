@@ -19,17 +19,21 @@ export default {
   },
   methods: {
     createPageTitle: function(to) {
-      if(to.meta.title) {
-        let setTitle = to.meta.title + ' | 中井ピアノエレクトーン教室'
+      if(to.path == '/') {
+        let setTitle = to.meta.title
+        document.title = setTitle
+      }
+      else if(to.meta.title) {
+        let setTitle = to.meta.title + ' | 門真市でピアノ・エレクトーンの習い事なら中井ピアノエレクトーン教室'
         document.title = setTitle
       } else {
         document.title = "中井ピアノエレクトーン教室"
       }
       if(to.meta.desc) {
-        let setDesc = to.meta.desc + ' | 中井ピアノエレクトーン教室'
+        let setDesc = to.meta.desc + ' | 大阪府門真市にてエレクトーンピアノ教室を開いています。教材充実。入会随時募集中。生徒損害補償サービス加入（無料）。是非、一度ご連絡ください！'
         document.querySelector("meta[name='description']").setAttribute('content', setDesc)
       } else {
-        document.querySelector("meta[name='description']").setAttribute('content', '中井ピアノエレクトーン教室')
+        document.querySelector("meta[name='description']").setAttribute('content', '大阪府門真市にてエレクトーンピアノ教室を開いています。教材充実。入会随時募集中。生徒損害補償サービス加入（無料）。是非、一度ご連絡ください！')
       }
     }
   },

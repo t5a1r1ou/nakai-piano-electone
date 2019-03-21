@@ -19,7 +19,7 @@ export default new Router({
       name: 'Introduce',
       component: Introduce,
       meta: {
-        title: 'トップ',
+        title: '門真市でピアノ・エレクトーンの習い事なら中井ピアノエレクトーン教室',
         desc: 'トップページです。'
       }
     },
