@@ -72,6 +72,9 @@ $ssp :700px;
 .event-img-box {
   width: 50%;
   margin: 0 auto;
+  @include sp {
+    width: 80%;
+  }
 }
 
 </style>
