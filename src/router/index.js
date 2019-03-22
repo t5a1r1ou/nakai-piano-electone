@@ -19,8 +19,8 @@ export default new Router({
       name: 'Introduce',
       component: Introduce,
       meta: {
-        title: '門真市でピアノ・エレクトーンの習い事なら中井ピアノエレクトーン教室',
-        desc: 'トップページです。'
+        title: '門真でピアノ・エレクトーンの習い事なら中井ピアノエレクトーン教室',
+        desc: 'トップページ, ご挨拶'
       }
     },
     {
@@ -29,7 +29,7 @@ export default new Router({
       component: Guide,
       meta: {
         title: '教室案内',
-        desc: '教室案内のページです。'
+        desc: '教室案内,'
       }
     },
     {
@@ -56,7 +56,7 @@ export default new Router({
       component: Lesson,
       meta: {
         title: 'レッスン',
-        desc: 'レッスンについてのページです。'
+        desc: 'レッスンについて:個人レッスン（エレクトーン・ピアノ）,プレレッスン（2~3人のグループレッスン）,料金について:入会金,月謝・レッスン時間,生徒損害補償サービス加入（無料）'
       }
     },
     {
