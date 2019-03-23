@@ -37,7 +37,7 @@ module.exports = {
     plugins: [
       new PrerenderSpaPlugin(
         path.join(__dirname, 'dist'),
-        [ '/guide', '/event', '/contact' ]
+        [ '/', '/lesson', '/guide', '/event', '/party', '/contact']
       ),
       new CopyWebpackPlugin([
       {
