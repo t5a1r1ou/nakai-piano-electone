@@ -6,22 +6,18 @@
       <p class="hidden"  style="display: none;">
       <label>Don’t fill this out: <input name="bot-field"></label>
     </p>
-      <label for="username">お名前※必須</label><input type="text" name="name" id="username" v-model="form.name" placeholder="中井 太郎">
+      <label for="username" :class="nameValidate">お名前※必須</label><input type="text" name="name" id="username" v-model="form.name" placeholder="中井 太郎">
       <label for="useremail">メールアドレス</label><input type="email" name="email" id="useremail" v-model="form.email" placeholder="nakai@sample.com">
       <label for="usertel">お電話番号</label><input type="tel" name="tel" id="usertel" v-model="form.tel" placeholder="080XXXXYYYY">
         <p>
-          <p class="form-text">※電話番号、メールアドレスどちらか必須</p>
+          <p class="form-text" :class="contactValidate">※電話番号、メールアドレスどちらか必須</p>
         <input type="checkbox" name="check" value="希望する" id="apply" v-model="form.check"/>
     <label for="apply" class="checkbox">無料体験レッスンを希望する</label>
       </p>
       <p class="text-block">
         <label for="contact">お問い合わせ内容</label><textarea name="message" id="contact" v-model="form.message" placeholder="こちらにお問い合わせ内容を入力してください。"></textarea>
       </p>
-      <p v-if="errors.length">
-        <ul>
-          <li v-for="(error, index) in errors" :key="index" class="ct-errors">{{ error }}</li>
-        </ul>
-      </p>
+      <p v-if="validates.warnMessage" class="ct-error">入力内容をご確認ください</p>
       <input type="submit" value="送信">
     </form>
   </div>
@@ -41,7 +37,11 @@ export default {
         message: "",
         check: false,
       },
-      errors: []
+      validates: {
+        nameCheck: "",
+        contactCheck: "",
+        warnMessage: false
+      }
     }
   },
   methods: {
@@ -57,15 +57,20 @@ export default {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       }
 
-      if (!this.form.name) {
-        this.errors.push("名前は必須です")
+      if (this.form.name) {
+        this.validates.nameCheck = "valid"
+      } else if (!this.form.name) {
+        this.validates.nameCheck = "invalid"
       }
 
-      if (!this.form.email && !this.form.tel) {
-        this.errors.push("電話番号、メールアドレスのいずれかは必須です")
+      if (this.form.email || this.form.tel) {
+        this.validates.contactCheck = "valid"
+      } else if (!this.form.email && !this.form.tel){
+        this.validates.contactCheck = "invalid"
       }
 
-      if ((this.form.name && this.form.email) || (this.form.name && this.form.tel)){
+      if (this.validates.nameCheck === "valid" && this.validates.contactCheck === "valid"){
+        this.validates.warnMessage = false
         axios.post(
           "/",
           this.encode({
@@ -80,6 +85,20 @@ export default {
         .catch(() => {
           this.$router.push('404')
         })
+      } else {
+        this.validates.warnMessage = true
+      }
+    }
+  },
+  computed: {
+    nameValidate () {
+      return {
+        'ct-error': this.validates.nameCheck == "invalid"
+      }
+    },
+    contactValidate () {
+      return {
+        'ct-error': this.validates.contactCheck == "invalid"
       }
     }
   }
@@ -163,7 +182,7 @@ $ssp :700px;
   }
 }
 
-.ct-errors {
+.ct-error {
   color: rgb(213, 22, 68);
 }
 
