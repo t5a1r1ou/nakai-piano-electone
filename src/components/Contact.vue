@@ -184,6 +184,7 @@ $ssp :700px;
 
 .ct-error {
   color: rgb(213, 22, 68);
+  font-weight: bold; 
 }
 
 .radio-block {
