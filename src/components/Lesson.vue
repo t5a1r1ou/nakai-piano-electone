@@ -75,6 +75,7 @@ table {
     border: 1px solid #000;
     padding: .5em;
     font-size: 1.8rem;
+    text-align: left;
     @include sp {
       font-size: 1.4rem;
     }
