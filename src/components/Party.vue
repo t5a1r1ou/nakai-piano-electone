@@ -4,7 +4,8 @@
       <h2 class="contents-title">わくわく音楽隊</h2>
       <p class="contents-detail">ヤマハ講師の有志が集まり、地域へ音楽の楽しさを届ける活動をしています。</p>
       <p class="contents-detail">子育てサークル、幼稚園・保育園、小学校、老人会、デイケアセンターなど、依頼があれば、エレクトーンを持ってお伺いします。</p>
-      <p class="contents-detail">エレクトーン演奏、スクリーンシアター、体操、手遊びなどで楽しい１時間を過ごします。活動の内容は<a href="https://blogs.yahoo.co.jp/kikuko_music" class="detail-link">ブログ</a>をご覧ください。</p>
+      <p class="contents-detail">エレクトーン演奏、スクリーンシアター、体操、手遊びなどで楽しい１時間を過ごします。<br>
+        活動の内容は<a href="https://nakaimusic.blog.fc2.com/" class="detail-link">ブログ</a>をご覧ください。</p>
       <div class="contents-img-block flexbox">
         <img src="../assets/wakuwaku1.png" alt="わくわく音楽隊の写真１">
         <img src="../assets/wakuwaku2.png" alt="わくわく音楽隊の写真２">

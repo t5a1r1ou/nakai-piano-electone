@@ -11,7 +11,7 @@
           <li><router-link to="/guide">教室案内</router-link></li>
           <li><router-link to="/event">イベント</router-link></li>
           <li><router-link to="/party">わくわく音楽隊</router-link></li>
-          <li><a href="https://blogs.yahoo.co.jp/kikuko_music">ブログ</a></li>
+          <li><a href="https://nakaimusic.blog.fc2.com/">ブログ</a></li>
           <li><router-link to="/contact">お問い合わせ</router-link></li>
         </ul>
       </nav>

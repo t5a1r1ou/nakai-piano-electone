@@ -18,7 +18,7 @@
     </div>
     <div class="contents-block inner">
       <h2 class="contents-title">講師</h2>
-      <p class="contents-sub">中井　貴久子</p>
+      <p class="contents-sub">中井 貴久子</p>
         <p class="contents-detail">jet全日本エレクトーン指導者協会会員</p>
         <p class="contents-detail">PSTA講師（ピアノスタディ指導者協会）</p>
         <p class="contents-detail">ヤマハ音楽能力検定認定試験官</p>
