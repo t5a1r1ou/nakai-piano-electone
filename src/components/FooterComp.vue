@@ -60,20 +60,22 @@ footer {
     }
   }
 }
-.footer-tel,
-.footer-mail {
-  margin-left: 3em;
+.footer-tel {
+  margin: 0 auto 1em;
   padding-top: 1em;
-  text-align: left;
 }
 
 .footer-mail {
-  padding-bottom: 1em;
+  margin: 0 auto;
+  padding: 1em 0 2em;
 }
 
 .footer-insta {
-  width: 10%;
+  width: 50px;
   margin: 2em auto 0;
+  @include sp {
+    width: 10%;
+  }
 }
 
 a[href^="tel:"] {
