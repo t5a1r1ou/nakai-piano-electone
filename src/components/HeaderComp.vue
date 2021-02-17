@@ -1,44 +1,57 @@
 <template>
   <div class="header">
     <div class="logo-wrap">
-      <img src="../assets/logo.png" class="logo">
+      <img src="../assets/logo.png" class="logo" />
     </div>
     <div class="nav-wrapper">
       <nav class="inner nav-inner">
         <ul class="nav-menu">
-          <li><router-link to="/">ホーム</router-link></li>
-          <li><router-link to="/lesson">レッスンについて</router-link></li>
-          <li><router-link to="/guide">教室案内</router-link></li>
-          <li><router-link to="/event">イベント</router-link></li>
-          <li><router-link to="/party">わくわく音楽隊</router-link></li>
-          <li><a href="https://nakaimusic.blog.fc2.com/">ブログ</a></li>
-          <li><router-link to="/contact">お問い合わせ</router-link></li>
+          <li>
+            <router-link to="/">ホーム</router-link>
+          </li>
+          <li>
+            <router-link to="/lesson">レッスンについて</router-link>
+          </li>
+          <li>
+            <router-link to="/guide">教室案内</router-link>
+          </li>
+          <li>
+            <router-link to="/event">イベント</router-link>
+          </li>
+          <li>
+            <router-link to="/party">わくわく音楽隊</router-link>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/nakaipiano_electone/">instagram</a>
+          </li>
+          <li>
+            <router-link to="/contact">お問い合わせ</router-link>
+          </li>
         </ul>
       </nav>
       <hamb-menu></hamb-menu>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
-import HambMenu from './HambMenu.vue'
+import HambMenu from "./HambMenu.vue";
 export default {
-  name: 'HeaderComp',
-  components:{
+  name: "HeaderComp",
+  components: {
     HambMenu
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-
-$tab :960px;
-$sp :768px;
-$ssp :700px;
+$tab: 960px;
+$sp: 768px;
+$ssp: 700px;
 
 @mixin tab {
-  @media only screen and (max-width: ($tab)){
+  @media only screen and (max-width: ($tab)) {
     @content;
   }
 }
@@ -69,7 +82,7 @@ $ssp :700px;
   margin-bottom: 3em;
   @include ssp {
     margin-bottom: 0;
-    padding: .4em;
+    padding: 0.4em;
   }
   .nav-menu {
     width: 100%;
@@ -88,7 +101,7 @@ $ssp :700px;
       text-decoration: none;
       &::after {
         position: absolute;
-        content: '';
+        content: "";
         bottom: 0;
         left: 0;
         width: 0;
@@ -112,5 +125,4 @@ $ssp :700px;
 .header {
   position: relative;
 }
-
 </style>

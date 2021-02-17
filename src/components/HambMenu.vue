@@ -1,23 +1,37 @@
 <template>
   <div class="hambmenu">
     <router-link to="/">
-    <img src="../assets/logo.png" alt="ロゴ" class="logo-img_sp">
+      <img src="../assets/logo.png" alt="ロゴ" class="logo-img_sp" />
     </router-link>
     <a href="#" class="menu_sp" @click="navspToggle">
       <span class="menu_line-tp line" :class="{ active: isActive }"></span>
-      <span class="menu_line-cnt line":class="{ active: isActive }"></span>
-      <span class="menu_line-btm line":class="{ active: isActive }"></span>
+      <span class="menu_line-cnt line" :class="{ active: isActive }"></span>
+      <span class="menu_line-btm line" :class="{ active: isActive }"></span>
     </a>
     <transition>
       <nav class="nav_sp" v-if="navStatus">
         <ul class="navsp-menu">
-          <li><router-link to="/" @click.native="navspClose">ホーム</router-link></li>
-          <li><router-link to="/lesson" @click.native="navspClose">レッスンについて</router-link></li>
-          <li><router-link to="/guide" @click.native="navspClose">教室案内</router-link></li>
-          <li><router-link to="/event" @click.native="navspClose">イベント</router-link></li>
-          <li><router-link to="/party" @click.native="navspClose">わくわく音楽隊</router-link></li>
-          <li><a href="https://nakaimusic.blog.fc2.com/">ブログ</a></li>
-          <li><router-link to="/contact" @click.native="navspClose">お問い合わせ</router-link></li>
+          <li>
+            <router-link to="/" @click.native="navspClose">ホーム</router-link>
+          </li>
+          <li>
+            <router-link to="/lesson" @click.native="navspClose">レッスンについて</router-link>
+          </li>
+          <li>
+            <router-link to="/guide" @click.native="navspClose">教室案内</router-link>
+          </li>
+          <li>
+            <router-link to="/event" @click.native="navspClose">イベント</router-link>
+          </li>
+          <li>
+            <router-link to="/party" @click.native="navspClose">わくわく音楽隊</router-link>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/nakaipiano_electone/">instagram</a>
+          </li>
+          <li>
+            <router-link to="/contact" @click.native="navspClose">お問い合わせ</router-link>
+          </li>
         </ul>
       </nav>
     </transition>
@@ -26,34 +40,33 @@
 
 <script>
 export default {
-  name: 'HambMenu',
+  name: "HambMenu",
   data() {
     return {
       navStatus: false,
       isActive: false
-    }
+    };
   },
   methods: {
     navspToggle() {
-      this.navStatus = !this.navStatus
-      this.isActive = !this.isActive
+      this.navStatus = !this.navStatus;
+      this.isActive = !this.isActive;
     },
     navspClose() {
-      this.isActive = false
-      setTimeout(this.navStatus = false, 10000)
+      this.isActive = false;
+      setTimeout((this.navStatus = false), 10000);
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-
-$tab :960px;
-$sp :768px;
-$ssp :700px;
+$tab: 960px;
+$sp: 768px;
+$ssp: 700px;
 
 @mixin tab {
-  @media only screen and (max-width: ($tab)){
+  @media only screen and (max-width: ($tab)) {
     @content;
   }
 }
@@ -69,8 +82,6 @@ $ssp :700px;
     @content;
   }
 }
-
-
 
 img {
   width: 40%;
@@ -93,7 +104,7 @@ img {
     width: 100%;
     position: absolute;
     background-color: #fff;
-    transition: transform .3s;
+    transition: transform 0.3s;
     &.active {
       transform: rotate(45deg);
       top: 1.2em;
@@ -104,7 +115,7 @@ img {
     @extend .menu_line-tp;
     top: 10px;
     &.active {
-      transform:scaleX(0);
+      transform: scaleX(0);
     }
   }
   .menu_line-btm {
@@ -143,10 +154,11 @@ img {
   }
 }
 
-.v-enter-active, .v-leave-active {
-  -webkit-transition: opacity .5s, -webkit-transform .5s;
-  -o-transition: opacity .5s, -o-transform .5s;
-  transition: opacity .5s, transform .5s;
+.v-enter-active,
+.v-leave-active {
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  -o-transition: opacity 0.5s, -o-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
 }
 
 .v-enter {
@@ -158,6 +170,4 @@ img {
   opacity: 0;
   transform: translateY(5em);
 }
-
-
 </style>
