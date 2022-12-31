@@ -22,7 +22,7 @@
       </div>
       <p class="contents-detail event-detail">
         年１回夏頃に発表会があります。<br />
-        生徒の皆さんは、ソロ演奏、アンサンブル演奏、フィナーレの部隊に参加します。
+        生徒の皆さんは、ソロ演奏、アンサンブル演奏、フィナーレの舞台に参加します。
       </p>
       <p class="contents-sub">大人の発表会</p>
       <div class="event-img-box">
