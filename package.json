@@ -9,16 +9,16 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
-    "copy-webpack-plugin": "^5.0.1",
+    "copy-webpack-plugin": "^11.0.0",
     "prerender-spa-plugin": "^3.4.0",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.5.0",
-    "@vue/cli-service": "^3.5.0",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
     "node-sass": "^4.9.0",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^13.2.0",
     "vue-template-compiler": "^2.5.21"
   }
 }
