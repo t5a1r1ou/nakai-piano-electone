@@ -5,50 +5,61 @@
       <p class="contents-detail">
         エレクトーン・ピアノで楽しく音楽を学べるように心がけています。小さいお子様から、保育士を目指す大学生、趣味として楽しみたいシニアの方まで、様々な年齢の生徒さんに通っていただいています。
       </p>
-      <p class="contents-sub">
-        個人レッスン
-        <br />
-        (エレクトーン・ピアノ)
-      </p>
-      <p class="contents-detail">
-        一人一人の生徒さんにあった練習内容で無理の無いよう上達していけるようにしています
-        <br />
-        大人の方はライフスタイルに合わせたレッスンを行います。ヤマハグレードも導入しています。
-      </p>
-      <p class="contents-sub">
-        プレレッスン
-        <br />
-        (2~3人のグループレッスン)
-      </p>
-      <p class="contents-detail">
-        ２歳〜年長までのクラスです。お友達と楽しみながら基礎を学び、音楽を通じて、集中力と豊かな感性を養います。
-        <br />
-        お友達と一緒にお申し込みください。
-      </p>
+      <dl>
+        <dt class="contents-sub">個人レッスン<br />（エレクトーン・ピアノ）</dt>
+        <dd class="contents-detail">
+          一人一人の生徒さんにあった練習内容で無理の無いよう上達していけるようにしています
+          <br />
+          大人の方はライフスタイルに合わせたレッスンを行います。ヤマハグレードも導入しています。
+        </dd>
+      </dl>
+      <dl>
+        <dt class="contents-sub">
+          プレピアノレッスン
+          <br />
+          （個人または同学年のペアレッスン）
+        </dt>
+        <dd class="contents-detail">
+          2才〜年中・年長までのレッスンです。<br />
+          鍵盤にこだわらず、音楽を通じて、集中力と豊かな感性を養います。<br />
+          ペアレッスンはお友達と一緒にお申し込みください。
+        </dd>
+      </dl>
     </div>
     <div class="contents-block inner">
       <h2 class="contents-title">料金について</h2>
-      <p class="contents-sub">入会金</p>
-      <p class="contents-detail">2000円</p>
-      <p class="contents-detail">
-        入会される方は、入会決定時に所定の入会料を収めていただきます。
-      </p>
-      <p class="contents-sub">お月謝・レッスン時間</p>
-      <table>
-        <tr>
-          <td>個人レッスン</td>
-          <td>５５００円〜（１回３０分、年間４０回）</td>
-        </tr>
-        <tr>
-          <td>プレレッスン</td>
-          <td>３５００円（１回４０分、年間３６回）</td>
-        </tr>
-      </table>
-      <p class="contents-detail">
-        別途教材費をいただいております。
-        <br />
-        おこさまにはレッスンバッグを入会プレゼントさせていただきます。
-      </p>
+      <dl>
+        <dt class="contents-sub">入会金</dt>
+        <dd>
+          <p class="contents-detail">2000円</p>
+          <p class="contents-detail">
+            入会される方は、入会決定時に所定の入会料を収めていただきます。
+          </p>
+        </dd>
+      </dl>
+      <dl>
+        <dt class="contents-sub">お月謝・レッスン時間</dt>
+        <dd>
+          <div class="contents-group">
+            <table>
+              <tr>
+                <td>個人レッスン</td>
+                <td>５５００円〜（１回３０分、年間４０回）</td>
+              </tr>
+              <tr>
+                <td>プレピアノレッスン</td>
+                <td>５５００円（１回３０分、月３回）</td>
+              </tr>
+            </table>
+
+            <p class="contents-detail">
+              別途教材費をいただいております。
+              <br />
+              おこさまにはレッスンバッグを入会プレゼントさせていただきます。
+            </p>
+          </div>
+        </dd>
+      </dl>
     </div>
     <div class="contents-block inner">
       <h2 class="contents-title">生徒損害補償サービス加入（無料）</h2>
